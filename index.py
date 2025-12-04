@@ -52,6 +52,9 @@ cv.imshow('Ghost', image)
 cropped=image[20:250,40:300]
 cv.imshow("Cropeed",cropped)
 
+resized=cv.resize(image,(200,300),interpolation=cv.INTER_BITS)
+cv.imshow("resized,",resized)
+
 
 
 
