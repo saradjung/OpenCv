@@ -55,6 +55,6 @@ cv.imshow("Cropeed",cropped)
 resized=cv.resize(image,(200,300),interpolation=cv.INTER_BITS)
 cv.imshow("resized,",resized)
 
-resized
+cv
 
 cv.waitKey(0)
