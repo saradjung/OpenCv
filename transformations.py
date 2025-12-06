@@ -3,7 +3,7 @@ import numpy as npd
 
 img=cv.imread('Static/ghost.png')
 
-# cv.imshow("image",img)
+cv.imshow("image",img)
 
 # print(img.shape)
 
@@ -29,10 +29,20 @@ img=cv.imread('Static/ghost.png')
 # cv.imshow("rotated",rotated)
 
 #FLIPPING
-flipped=cv.flip(img,-1)
-cv.imshow("flipped",flipped)
+# flipped=cv.flip(img,-1)
+# cv.imshow("flipped",flipped)
 
+gray= cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+cv.imshow("gray",gray)
 
+blured=cv.GaussianBlur(gray,(3,3),cv.BORDER_DEFAULT)
+cv.imshow("blurred",blured)
+
+canny=cv.Canny(blured,125,190)
+cv.imshow("canny",canny)
+
+contours, hierarchies=cv.findContours(canny,cv.RETR_LIST,cv.CHAIN_APPROX_SIMPLE)
+print(len(contours))
 
 
 
